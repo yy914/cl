@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="jwj_MyMasterPage.Master.cs" Inherits="jinweijie.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="jwj_mainstyle.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onscroll="return false">
+    <form id="form1" runat="server">
+         <table cellpadding="0" cellspacing="0" class="PageAll">
+            <tr>
+                <td id="left_msg_change" class="Page_left">
+                    <div id="div_logo" class="Page_left_top_bg">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/66.gif" />
+                    </div>
+                    <div id="div_menu" class="Page_left_menu">
+                        <asp:TreeView ID="TreeView1" runat="server" CssClass="Tree_view" HoverNodeStyle-CssClass="Tree_view_hover" SelectedNodeStyle-CssClass="Tree_view_select" ShowLines="True" >
+<HoverNodeStyle CssClass="Tree_view_hover"></HoverNodeStyle>
+                            <Nodes>
+                                <asp:TreeNode Text="前台营业" Value="新建节点" ImageUrl="~/images/ico_3.gif" SelectAction="Expand">
+                                    <asp:TreeNode Text="菜单&amp;点菜" Value="新建节点" ImageUrl="~/images/ico_2.gif" NavigateUrl="~/jwj_order_add.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="座位资源" Value="新建节点" ImageUrl="~/images/anchor.gif"></asp:TreeNode>
+                                    <asp:TreeNode Text="就餐详情" Value="新建节点" ImageUrl="~/images/modify.gif"></asp:TreeNode>
+                                    <asp:TreeNode Text="结账管理" Value="新建节点" ImageUrl="~/images/pay.gif"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="预定服务" Value="新建节点" ImageUrl="~/images/ico_0.gif" SelectAction="Expand">
+                                    <asp:TreeNode ImageUrl="~/images/ico_2.gif" Text="新建预定" Value="新建预定"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/modify.gif" Text="订单管理" Value="订单管理"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="外卖服务" Value="新建节点" ImageUrl="~/images/21.gif" SelectAction="Expand">
+                                    <asp:TreeNode ImageUrl="~/images/ico_2.gif" Text="外卖订单" Value="外卖订单"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/modify.gif" Text="外卖管理" Value="外卖管理"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="员工管理" Value="新建节点" ImageUrl="~/images/001.gif" SelectAction="Expand">
+                                    <asp:TreeNode ImageUrl="~/images/013.gif" Text="员工信息" Value="员工信息" NavigateUrl="~/jwj_employee_manager.aspx"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/002.gif" Text="员工考勤" Value="员工考勤"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/pay.gif" Text="工资管理" Value="工资管理"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/modify.gif" Text="考勤统计" Value="考勤统计"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode ImageUrl="~/images/toolmenu.gif" SelectAction="Expand" Text="系统管理" Value="系统管理">
+                                    <asp:TreeNode ImageUrl="~/images/ico_2.gif" Text="菜单管理" Value="菜单管理" NavigateUrl="~/jwj_menu_manager.aspx"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/add.GIF" Text="库存管理" Value="库存管理"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/anchor.gif" Text="座位管理" Value="座位管理"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/013.gif" Text="账户管理" Value="账户管理"></asp:TreeNode>
+                                    <asp:TreeNode ImageUrl="~/images/modify.gif" Text="营业统计" Value="营业统计"></asp:TreeNode>
+                                </asp:TreeNode>
+                            </Nodes>
+
+<SelectedNodeStyle CssClass="Tree_view_select"></SelectedNodeStyle>
+                        </asp:TreeView>
+                    </div>
+                </td>
+                <td class="Page_right">
+                    <div id="div_tool" class="page_right_top">
+                        <asp:Image ID="Image2" runat="server" CssClass="Online_img" ImageUrl="~/images/ico_online_default.gif" />
+                        <asp:Label ID="Label1" runat="server" Text="您好！"></asp:Label>
+                        <img alt="" class="tool_order" src="images/ico_2.gif" /><asp:HyperLink ID="HyperLink1" runat="server" Height="15px" NavigateUrl="~/jwj_order_add.aspx">营业点菜</asp:HyperLink>
+                        <img alt="" class="tool" src="images/ico_0.gif" /><asp:HyperLink ID="HyperLink2" runat="server" Height="15px" NavigateUrl="~/default.aspx">座位预定</asp:HyperLink>
+                        <img alt="" class="tool" src="images/21.gif" /><asp:HyperLink ID="HyperLink3" runat="server" Height="15px" NavigateUrl="~/default.aspx">外卖订单</asp:HyperLink>
+                        <img alt="" class="tool" src="images/pay.gif" /><asp:HyperLink ID="HyperLink4" runat="server" Height="15px" NavigateUrl="~/default.aspx">结账付款</asp:HyperLink>
+                        <img alt="" class="tool" src="images/icn-refresh.gif" /><asp:HyperLink ID="HyperLink5" runat="server" Height="15px" NavigateUrl="~/default.aspx">注销退出</asp:HyperLink>
+                    </div>
+                    <div id="div_oper" class="page_right_oper">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
